@@ -1,0 +1,17 @@
+﻿@model CreateCustomerDto
+@{
+    ViewData["Title"] = "AddCustomer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Customer Ekleme</h1>
+<form method="post">
+    <div class="input-group mb-3 border">
+        <input type="text" asp-for="Name" class="form-control text-black" placeholder="Customer Adı">
+    </div>
+    <div class="input-group mb-3 border">
+        <input type="text" asp-for="City" class="form-control text-black" placeholder="Şehir">
+    </div>
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

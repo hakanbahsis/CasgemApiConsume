@@ -1,0 +1,31 @@
+﻿@model List<ResultCustomerDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h3>Customer Listesi</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <td>#</td>
+        <td>Customer Adı</td>
+        <td>City</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Name</td>
+            <td>@item.City</td>
+            <td><a href="/Customer/DeleteCustomer/@item.CustomerId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Customer/UpdateCustomer/@item.CustomerId" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Customer/AddCustomer/" class="btn btn-success">Yeni Kayıt</a>
+
